@@ -5,7 +5,7 @@ import axios from "axios";
 
 function App() {
     const [students, setStudents] = useState([])
-    const [isEditing, setIsEditing] = useState(true)
+    const [isEditing, setIsEditing] = useState(false)
     const [isloader, setIsLoader] = useState(true)
     const [updateUserId, setUpdataUserId] = useState(null)
     const [newStudent, setNewStudent] = useState({
