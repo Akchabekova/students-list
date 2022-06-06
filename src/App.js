@@ -77,7 +77,7 @@ function App() {
     }
   return (
    <div className="App">
-       <form onSubmit = {isEditing ? updateUser : handleSubmit}>
+       <form onSubmit = {isEditing ? updateUser : handleSubmit} >
            <div>
        <div className="bg-white shadow rounded-lg p-6">
            <div className="grid lg:grid-cols-2 gap-6">
@@ -89,8 +89,8 @@ function App() {
                        </p>
                    </div>
                    <p>
-                       <input onChange={handleChange} id="name" value = {newStudent.name} autoComplete="false" tabIndex="0" type="text"
-                              className="py-1 px-1 text-gray-900 outline-none block h-full w-full"  value={students.name}/>
+                       <input onChange={handleChange} name="name" autoComplete="false" tabIndex="0" type="text"
+                              className="py-1 px-1 text-gray-900 outline-none block h-full w-full"  value={newStudent.name}/>
                    </p>
                </div>
                <div
@@ -101,8 +101,8 @@ function App() {
                        </p>
                    </div>
                    <p>
-                       <input   onChange={handleChange}  value = {newStudent.group} id="group" autoComplete="false" tabIndex="0" type="text"
-                              className="py-1 px-1 outline-none block h-full w-full" />
+                       <input onChange={handleChange}  name="group" autoComplete="false" tabIndex="0" type="text"
+                              className="py-1 px-1 outline-none block h-full w-full"  value = {newStudent.group} />
                    </p>
                </div>
                <div
@@ -113,8 +113,8 @@ function App() {
                        </p>
                    </div>
                    <p>
-                       <input  onChange={handleChange} value = {newStudent.year} id="year" autoComplete="false" tabIndex="0" type="text"
-                              className="py-1 px-1 outline-none block h-full w-full" />
+                       <input  onChange={handleChange}  name="year" autoComplete="false" tabIndex="0" type="text"
+                              className="py-1 px-1 outline-none block h-full w-full" value = {newStudent.year} />
                    </p>
                </div>
                <div
@@ -125,8 +125,8 @@ function App() {
                        </p>
                    </div>
                    <p>
-                       <input  onChange={handleChange}  value = {newStudent.phone} id="phone" autoComplete="false" tabIndex="0" type="text"
-                              className="py-1 px-1 outline-none block h-full w-full" />
+                       <input  onChange={handleChange} name="phone" autoComplete="false" tabIndex="0" type="text"
+                              className="py-1 px-1 outline-none block h-full w-full text-black"  value = {newStudent.phone}  />
                    </p>
                </div>
                <div
@@ -137,8 +137,8 @@ function App() {
                        </p>
                    </div>
                    <p>
-                       <input  onChange={handleChange}  value = {newStudent.email} id="email" autoComplete="false" tabIndex="0" type="text"
-                              className="py-1 px-1 outline-none block h-full w-full" />
+                       <input  onChange={handleChange}  name="email" autoComplete="false" tabIndex="0" type="text"
+                              className="py-1 px-1 outline-none block h-full w-full"  value = {newStudent.email} />
                    </p>
                </div>
            </div>
@@ -178,11 +178,9 @@ function App() {
               <td className="text-center text-dark font-medium text-base py-5 px-2 bg-[#F3F6FF] border-b border-l border-[#E8E8E8] ">
                   <button
                       onClick={() => handleEdit(student)}
-                      className=" border border-yellow-400 py-1 px-4 text-primary inline-block rounded ">
+                      className=" border border-yellow-400 py-1 px-4 mr-2 text-primary inline-block rounded ">
                       Edit
                   </button>
-              </td>
-              <td className="text-center text-dark font-medium text-base py-5 px-2 bg-[#F3F6FF] border-b border-l border-[#E8E8E8] ">
                   <button
                       onClick={() => deleteUser(student.id)}
                       className=" border border-red-400 py-1 px-4 text-primary inline-block rounded ">
